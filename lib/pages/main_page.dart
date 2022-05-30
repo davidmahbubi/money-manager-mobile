@@ -35,6 +35,10 @@ class _MainPageState extends State<MainPage> {
         onTap: changePage,
         currentIndex: selectedIndex,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

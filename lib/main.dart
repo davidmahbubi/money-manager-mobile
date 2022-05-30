@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:money_manager_mobile/pages/main_page.dart';
-import 'package:money_manager_mobile/pages/transactions.dart';
 
 void main(List<String> args) => runApp(const App());
 

@@ -1,4 +1,6 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:money_manager_mobile/pages/accounts.dart';
+import 'package:money_manager_mobile/pages/stats.dart';
 import 'package:money_manager_mobile/pages/transactions.dart';
 
 const List<Map<String, dynamic>> pagesList = [
@@ -10,11 +12,11 @@ const List<Map<String, dynamic>> pagesList = [
   {
     'title': 'Stats',
     'icon': FaIcon(FontAwesomeIcons.chartArea),
-    'page': Transactions(),
+    'page': Stats(),
   },
   {
     'title': 'Account',
     'icon': FaIcon(FontAwesomeIcons.coins),
-    'page': Transactions(),
+    'page': Accounts(),
   },
 ];
