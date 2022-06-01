@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_manager_mobile/components/create_expense.dart';
+import 'package:money_manager_mobile/components/income_expense_form.dart';
 
 class CreateTransaction extends StatefulWidget {
   const CreateTransaction({Key? key}) : super(key: key);
@@ -27,9 +28,9 @@ class CreateTransactionState extends State<CreateTransaction> {
         ),
         body: const TabBarView(
           children: <Widget>[
-            Text('Income Tab'),
-            CreateExpense(),
-            Text('Transfer Tab'),
+            CreateIncomeExpenseForm(),
+            CreateIncomeExpenseForm(),
+            CreateIncomeExpenseForm(),
           ],
         ),
       ),
