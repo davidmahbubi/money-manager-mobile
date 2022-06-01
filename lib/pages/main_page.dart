@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_manager_mobile/components/bottom_navbar.dart';
 import 'package:money_manager_mobile/components/pages_list.dart';
+import 'package:money_manager_mobile/pages/create_transaction.dart';
 
 class MainPage extends StatefulWidget {
   final List<Map<String, dynamic>> pages = pagesList;
@@ -36,7 +37,14 @@ class _MainPageState extends State<MainPage> {
         currentIndex: selectedIndex,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => const CreateTransaction(),
+            ),
+          );
+        },
         child: const Icon(Icons.add),
       ),
     );
