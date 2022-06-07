@@ -34,11 +34,15 @@ class Stats extends StatelessWidget {
               children: <Widget>[
                 PieChart(
                   dataMap: incomeDataMap,
-                  legendOptions: LegendOptions(legendShape: BoxShape.circle),
+                  legendOptions: const LegendOptions(
+                    legendShape: BoxShape.circle,
+                  ),
                 ),
                 PieChart(
                   dataMap: expenseDataMap,
-                  legendOptions: LegendOptions(legendShape: BoxShape.circle),
+                  legendOptions: const LegendOptions(
+                    legendShape: BoxShape.circle,
+                  ),
                 ),
               ],
             ),
