@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:money_manager_mobile/components/create_expense.dart';
-import 'package:money_manager_mobile/components/income_expense_form.dart';
+import 'package:money_manager_mobile/components/create_income_expense_form.dart';
+import 'package:money_manager_mobile/components/create_transfer_form.dart';
 
-class CreateTransaction extends StatefulWidget {
-  const CreateTransaction({Key? key}) : super(key: key);
+class TransactionForm extends StatefulWidget {
+  final String title;
+  const TransactionForm({Key? key, required this.title}) : super(key: key);
 
   @override
-  State<CreateTransaction> createState() => CreateTransactionState();
+  State<TransactionForm> createState() => TransactionFormState();
 }
 
-class CreateTransactionState extends State<CreateTransaction> {
+class TransactionFormState extends State<TransactionForm> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -17,7 +18,7 @@ class CreateTransactionState extends State<CreateTransaction> {
       initialIndex: 1,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Create Transaction'),
+          title: Text(widget.title),
           bottom: const TabBar(
             tabs: <Widget>[
               Tab(text: 'Income'),
@@ -30,7 +31,7 @@ class CreateTransactionState extends State<CreateTransaction> {
           children: <Widget>[
             CreateIncomeExpenseForm(),
             CreateIncomeExpenseForm(),
-            CreateIncomeExpenseForm(),
+            CreateTransferForm(),
           ],
         ),
       ),

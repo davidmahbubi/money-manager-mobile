@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class CreateIncomeExpenseForm extends StatefulWidget {
-  const CreateIncomeExpenseForm({super.key});
+class CreateTransferForm extends StatefulWidget {
+  const CreateTransferForm({super.key});
 
   @override
-  State<CreateIncomeExpenseForm> createState() =>
-      _CreateIncomeExpenseFormState();
+  State<CreateTransferForm> createState() => _CreateTransferFormState();
 }
 
-class _CreateIncomeExpenseFormState extends State<CreateIncomeExpenseForm> {
+class _CreateTransferFormState extends State<CreateTransferForm> {
   final List<Map> accounts = [
-    {'value': 'food_and_drinks', 'label': 'Food & Drinks'},
-    {'value': 'transportation', 'label': 'Transportation'},
+    {'value': 'cash', 'label': 'Cash'},
+    {'value': 'rekening_bca', 'label': 'Rekening BCA'},
+    {'value': 'rekening_bri', 'label': 'Rekening BRI'},
+    {'value': 'debit_bni', 'label': 'Debit BNI'},
   ];
 
   final TextEditingController _date = TextEditingController();
@@ -55,7 +56,17 @@ class _CreateIncomeExpenseFormState extends State<CreateIncomeExpenseForm> {
               ],
             ),
             DropdownButtonFormField(
-              decoration: const InputDecoration(label: Text('Account')),
+              decoration: const InputDecoration(label: Text('From Account')),
+              items: accounts.map((Map account) {
+                return DropdownMenuItem(
+                  value: account['value'],
+                  child: Text(account['label']),
+                );
+              }).toList(),
+              onChanged: _onSelectorChanged,
+            ),
+            DropdownButtonFormField(
+              decoration: const InputDecoration(label: Text('To Account')),
               items: accounts.map((Map account) {
                 return DropdownMenuItem(
                   value: account['value'],
